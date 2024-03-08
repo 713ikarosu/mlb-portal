@@ -15,7 +15,6 @@ model Player {
   statsId      Int
   fullName     String
   fullNameKana String
-  // TODO: primaryPosition(別DB?), CurrentTeam(API経由?)
 
   @@map("player")
 }
