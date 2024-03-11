@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Noto_Sans_JP } from 'next/font/google';
+import React from 'react';
 
 const NotoSansJP = Noto_Sans_JP({
   weight: ['400', '700'],
