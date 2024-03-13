@@ -18,3 +18,16 @@ model Player {
 
   @@map("player")
 }
+
+model Personality {
+  statsId         Int @id
+  fullName        String
+  primaryNumber   String
+  birthDate       String
+  primaryPosition Json
+  batSide         String
+  pitchHand       String
+  mlbDebutDate    String
+
+  @@map("personality")
+}
