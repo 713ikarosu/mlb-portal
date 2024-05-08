@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 
 export const GET = async (_req: Request, { params }: { params: Params }) => {
   try {
-    const targetPlayerId: number = Number(params.id);
+    const targetPlayerId = params.id;
 
     await connect();
     const player = await prisma.player.findFirst({

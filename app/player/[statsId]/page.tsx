@@ -23,18 +23,17 @@ type PlayerData = {
 // }
 
 async function getPlayerData({ statsId }: StatsIdParams): Promise<PlayerData | undefined> {
-  const targetPlayerId: number = Number(statsId);
   try {
     await connect();
     const player = await prisma.player.findFirst({
-      where: { statsId: targetPlayerId },
+      where: { statsId: statsId },
     });
     if (!player) {
       throw new Error("Player not found");
     }
 
     const playerPersonality = await prisma.personality.findUnique({
-      where: { statsId: targetPlayerId },
+      where: { statsId: statsId },
       include: { primaryPosition: true },
     });
     if (!playerPersonality) {

@@ -11,7 +11,7 @@ datasource db {
 }
 
 model Player {
-  id           Int          @id @default(autoincrement())
+  id           Int         @id @default(autoincrement())
   statsId      String
   fullName     String
   fullNameKana String
@@ -21,16 +21,15 @@ model Player {
 }
 
 model Personality {
-  statsId             String              @id
+  statsId             String          @id
   fullName            String
   primaryNumber       String
   birthDate           String
-  primaryPositionCode String           @default("0")
+  primaryPositionCode String          @default("0")
   batSide             String
   pitchHand           String
   mlbDebutDate        String
-  // primaryPosition     PrimaryPosition? @relation(fields: [primaryPositionCode], references: [code])
-  primaryPosition     PrimaryPosition?
+  primaryPosition     PrimaryPosition @relation(fields: [primaryPositionCode], references: [code])
   Player              Player[]
 
   @@map("personality")
@@ -41,7 +40,8 @@ model PrimaryPosition {
   name         String
   type         String
   abbreviation String
-  personality  Personality?    @relation(fields: [code], references: [statsId])
+  // personality  Personality?    @relation(fields: [code], references: [primaryPositionCode])
+  Personality  Personality[]
 
   @@map("primary_position")
 }
