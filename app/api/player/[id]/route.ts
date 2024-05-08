@@ -11,7 +11,13 @@ export const GET = async (_req: Request, { params }: { params: Params }) => {
       where: { statsId: targetPlayerId },
     });
 
-    return NextResponse.json({ player }, { status: 200 });
+    const playerPersonality = await prisma.personality.findUnique({
+      where: { statsId: targetPlayerId },
+      include: { primaryPosition: true },
+    });
+    console.log("route prisma: ", playerPersonality);
+
+    return NextResponse.json({ player, playerPersonality }, { status: 200 });
   } catch (error) {
     return NextResponse.json({ message: "Error", data: error }, { status: 500 });
   } finally {
