@@ -1,6 +1,6 @@
-import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
-import { connect, prisma } from "../../connection";
+import type { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 import { NextResponse } from "next/server";
+import { connect, prisma } from "../../connection";
 
 export const GET = async (_req: Request, { params }: { params: Params }) => {
   try {
