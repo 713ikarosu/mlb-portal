@@ -1,5 +1,5 @@
 import { connect, prisma } from "@/app/api/connection";
-import { Personality, Player } from "@prisma/client";
+import type { Personality, Player } from "@prisma/client";
 import Image from "next/image";
 
 type StatsIdParams = {

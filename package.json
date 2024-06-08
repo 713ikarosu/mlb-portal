@@ -9,7 +9,7 @@
     "lint": "yarn dlx @biomejs/biome lint .",
     "lint:fix": "yarn dlx @biomejs/biome lint . --write",
     "format": "yarn dlx @biomejs/biome format . --write",
-    "check": "yarn dlx @biomejs/biome check --apply ."
+    "check": "yarn dlx @biomejs/biome check --write ."
   },
   "dependencies": {
     "@prisma/client": "5.5.2",
@@ -27,6 +27,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10",
+    "daisyui": "^4.12.2",
     "postcss": "^8",
     "prisma": "^5.5.2",
     "tailwindcss": "^3",

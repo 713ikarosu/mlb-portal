@@ -14,9 +14,6 @@
         "noUndeclaredVariables": "error",
         "noUnusedVariables": "error",
         "useHookAtTopLevel": "error"
-      },
-      "nursery": {
-        "noUnusedImports": "error"
       }
     }
   },
