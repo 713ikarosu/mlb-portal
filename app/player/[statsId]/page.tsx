@@ -67,7 +67,7 @@ export default async function Page({ params }: { params: StatsIdParams }) {
             <li>{playerData.playerPersonality.mlbDebutDate}</li>
             <li>{playerData.playerPersonality.pitchHand}</li>
             <li>{playerData.playerPersonality.primaryNumber}</li>
-            <li>{playerData.playerPersonality.primaryPosition.name}</li>
+            {/* <li>{playerData.playerPersonality.primaryPosition.name}</li> */}
           </ul>
         </div>
       ) : (
