@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 import type React from "react";
-import "./globals.css";
+import "../public/css/globals.css";
+import { LayoutHeader } from "./_components/LayoutHeader";
 
 const NotoSansJP = Noto_Sans_JP({
   weight: ["400", "700"],
@@ -17,7 +18,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ja">
-      <body className={NotoSansJP.className}>{children}</body>
+      <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+      </head>
+      <body className={NotoSansJP.className}>
+        <LayoutHeader />
+        {children}
+      </body>
     </html>
   );
 }
