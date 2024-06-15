@@ -10,18 +10,18 @@ export const LayoutHeader = () => {
             <span>MLB PORTAL</span>
           </a>
           <nav>
-            <ul className="flex space-x-4">
+            <ul className="flex space-x-6">
               <li>
                 <a href="/">ホーム</a>
               </li>
               <li>
-                <a href="/news">ニュース</a>
+                <a href="/news/">ニュース</a>
               </li>
               <li>
-                <a href="/players">選手</a>
+                <a href="/words/">用語</a>
               </li>
               <li>
-                <a href="/teams">チーム</a>
+                <a href="/teams/">チーム</a>
               </li>
             </ul>
           </nav>
