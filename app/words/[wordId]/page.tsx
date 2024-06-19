@@ -1,8 +1,9 @@
 import Heading from "@/app/_components/Heading";
-import { SimpleLink } from "@/app/_components/SimpleLink";
+// import { SimpleLink } from "@/app/_components/SimpleLink";
 import { SITE_NAME } from "@/app/constants";
+import { getWord } from "@/services/getWord";
 import type { Metadata } from "next";
-import Link from "next/link";
+// import Link from "next/link";
 import { notFound } from "next/navigation";
 
 interface Props {
@@ -12,25 +13,27 @@ interface Props {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  // const { word } = await getWord({ id: params.wordId });
+  const { data } = await getWord({ id: params.wordId });
   if (!params.wordId) {
     notFound();
   }
-  console.log(params.wordId);
+  console.log(params.wordId, data);
 
+  // TODO: null, undefined handling
   return {
-    // title: `${word.title} | ${SITE_NAME}`,
-    // description: word.description,
-    title: `トレードデットライン | ${SITE_NAME}`,
-    description: "日本人ファン向けにMLB情報を発信します。",
+    title: `${data.word} | ${SITE_NAME}`,
+    description: `${data.description} | ${SITE_NAME} は日本人ファン向けにメジャーリーグ情報を発信します。`,
   };
 }
 
-export default function WordPage() {
+export default async function WordPage({ params }: Props) {
+  const { data } = await getWord({ id: params.wordId });
   return (
     <section className="min-h-[80vh] flex space-y-8 py-16 flex-col w-full max-w-screen-md">
-      <Heading divider>トレードデットライン</Heading>
+      <Heading divider>{data.word}</Heading>
       <div>
+        <p className="leading-6">{data.description}</p>
+        {/* MEMO: リンク付きページの理想形イメージ
         <p className="leading-6">
           例年7月31日（アメリカ東部標準時16:00）に定められる、メジャー球団が、メジャー契約（40人枠内）選手をシーズン中に
           <SimpleLink href="/">トレード</SimpleLink>できる期限日時のこと。
@@ -45,7 +48,7 @@ export default function WordPage() {
           off）を受け、選手が無条件譲渡されるケースは8月以降もありうる。また、今シーズン1度も40人枠に登録されていない
           <SimpleLink href="/">マイナー契約</SimpleLink>（40人枠外）選手については、8月以降も
           <SimpleLink href="/">ウェイバー</SimpleLink>可能。
-        </p>
+        </p> */}
       </div>
     </section>
   );
