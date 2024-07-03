@@ -1,4 +1,5 @@
 import Heading from "@/app/_components/Heading";
+import Text from "@/app/_components/common";
 // import { SimpleLink } from "@/app/_components/SimpleLink";
 import { SITE_NAME } from "@/app/constants";
 import { getWord } from "@/services/getWord";
@@ -32,7 +33,7 @@ export default async function WordPage({ params }: Props) {
     <section className="min-h-[80vh] flex space-y-8 py-16 flex-col w-full max-w-screen-md">
       <Heading divider>{data.word}</Heading>
       <div>
-        <p className="leading-6">{data.description}</p>
+        <Text>{data.description}</Text>
         {/* MEMO: リンク付きページの理想形イメージ
         <p className="leading-6">
           例年7月31日（アメリカ東部標準時16:00）に定められる、メジャー球団が、メジャー契約（40人枠内）選手をシーズン中に
