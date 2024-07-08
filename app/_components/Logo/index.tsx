@@ -1,14 +1,10 @@
-import { faBaseballBall } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { LogoIcon } from "../LogoIcon";
 
-interface LogoProps {
-  color?: string;
-}
-
-export const Logo = ({ color }: LogoProps) => {
+export const Logo = () => {
   return (
-    <span>
-      <FontAwesomeIcon icon={faBaseballBall} className="h-[36px]" color={color} />
-    </span>
+    <a href="/" className="flex items-center space-x-2 text-2xl font-bold flex-1 px-2">
+      <LogoIcon />
+      <span>MLBポータル</span>
+    </a>
   );
 };
