@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main>
-      <div className="hero min-h-screen" style={{ backgroundImage: "url(/image/top/main_visual.jpg)" }}>
+      <section className="hero min-h-screen" style={{ backgroundImage: "url(/image/top/main_visual.jpg)" }}>
         <div className="hero-overlay bg-opacity-60" />
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-md">
@@ -18,9 +18,9 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </div>
+      </section>
 
-      <section className="bg-gray-200 text-slate-600 py-24">
+      <section className="bg-gray-200 text-slate-600 px-4 py-24">
         <h2 className="text-3xl font-bold text-center py-8">日本のメジャーリーグファンへ</h2>
         <div className="flex justify-center gap-4 py-8 flex-col md:flex-row">
           {/* TODO: コンポーネント化 */}
