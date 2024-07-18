@@ -119,6 +119,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fortawesome/fontawesome-common-types@npm:6.6.0":
+  version: 6.6.0
+  resolution: "@fortawesome/fontawesome-common-types@npm:6.6.0"
+  checksum: 10c0/f76e5959f6ce01355f599126a3a68facba578dc8ebb7ad40fbd22417b7056364a577c1887720ec9653d4efa5b704a01150f5064fc7de237d697fd80e3d9c83aa
+  languageName: node
+  linkType: hard
+
 "@fortawesome/fontawesome-svg-core@npm:^6.5.2":
   version: 6.5.2
   resolution: "@fortawesome/fontawesome-svg-core@npm:6.5.2"
@@ -128,12 +135,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fortawesome/free-brands-svg-icons@npm:^6.5.2":
-  version: 6.5.2
-  resolution: "@fortawesome/free-brands-svg-icons@npm:6.5.2"
+"@fortawesome/free-brands-svg-icons@npm:^6.6.0":
+  version: 6.6.0
+  resolution: "@fortawesome/free-brands-svg-icons@npm:6.6.0"
   dependencies:
-    "@fortawesome/fontawesome-common-types": "npm:6.5.2"
-  checksum: 10c0/4c1798930547a73bf9dfd04064288d4ce02fbf42fece056c1f5dd6596363d6a34bb86bc2e0f400b78f938f48773aceb375bc6977e55cbaec9b7bd07996ae1e8c
+    "@fortawesome/fontawesome-common-types": "npm:6.6.0"
+  checksum: 10c0/1135a22ff274939da477496f550b6750a1b5fd0ddd0c09bddb1874f2c183a5c8edb519de2cebf6454b12a8457c3eec587bdb6f68e96140cceeb6d02c1ec35479
   languageName: node
   linkType: hard
 
@@ -1506,7 +1513,7 @@ __metadata:
   dependencies:
     "@biomejs/biome": "npm:1.5.3"
     "@fortawesome/fontawesome-svg-core": "npm:^6.5.2"
-    "@fortawesome/free-brands-svg-icons": "npm:^6.5.2"
+    "@fortawesome/free-brands-svg-icons": "npm:^6.6.0"
     "@fortawesome/free-regular-svg-icons": "npm:^6.5.2"
     "@fortawesome/free-solid-svg-icons": "npm:^6.5.2"
     "@fortawesome/react-fontawesome": "npm:^0.2.2"
@@ -2341,11 +2348,11 @@ __metadata:
 
 "typescript@patch:typescript@npm%3A^5#optional!builtin<compat/typescript>":
   version: 5.4.5
-  resolution: "typescript@patch:typescript@npm%3A5.4.5#optional!builtin<compat/typescript>::version=5.4.5&hash=d69c25"
+  resolution: "typescript@patch:typescript@npm%3A5.4.5#optional!builtin<compat/typescript>::version=5.4.5&hash=5adc0c"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10c0/9cf4c053893bcf327d101b6c024a55baf05430dc30263f9adb1bf354aeffc11306fe1f23ba2f9a0209674359f16219b5b7d229e923477b94831d07d5a33a4217
+  checksum: 10c0/db2ad2a16ca829f50427eeb1da155e7a45e598eec7b086d8b4e8ba44e5a235f758e606d681c66992230d3fc3b8995865e5fd0b22a2c95486d0b3200f83072ec9
   languageName: node
   linkType: hard
 
