@@ -7,14 +7,13 @@ type Word = {
 };
 
 type Props = {
-  id: string;
   revalidate?: number;
 };
 
-export async function getWords({ id, revalidate }: Props): Promise<{ data: Word }> {
-  return fetch(path(`/api/words/${id}`), {
+export async function getWords({ revalidate }: Props): Promise<{ words: Word[] }> {
+  return fetch(path("/api/words/"), {
     next: {
-      tags: [`words/${id}`],
+      tags: ["words"],
       ...(revalidate !== undefined && { revalidate }),
     },
   })
