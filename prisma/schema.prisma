@@ -6,16 +6,18 @@
 
 generator client {
   provider = "prisma-client-js"
+  previewFeatures = ["postgresqlExtensions"]
 }
 
 datasource db {
   provider  = "postgresql"
   url  	    = env("DATABASE_URL")
+  extensions = [uuidOssp(map: "uuid-ossp")]
 }
 
 
 model Word {
-  id        Int      @id @default(autoincrement())
+  id        String      @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
   word      String
   description   String
   createdAt DateTime @default(now())
@@ -23,9 +25,9 @@ model Word {
 }
 
 model RelatedLink {
-  id        Int      @id @default(autoincrement())
-  wordId    Int
-  linkedWordId Int
+  id        String      @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  wordId    String
+  linkedWordId String
   linkedWord String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

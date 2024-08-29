@@ -1,9 +1,11 @@
+-- CreateExtension
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
 -- CreateTable
 CREATE TABLE "Word" (
-    "id" SERIAL NOT NULL,
+    "id" UUID NOT NULL DEFAULT uuid_generate_v4(),
     "word" TEXT NOT NULL,
     "description" TEXT NOT NULL,
-    "example" TEXT NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
@@ -12,9 +14,9 @@ CREATE TABLE "Word" (
 
 -- CreateTable
 CREATE TABLE "RelatedLink" (
-    "id" SERIAL NOT NULL,
-    "wordId" INTEGER NOT NULL,
-    "linkedWordId" INTEGER NOT NULL,
+    "id" UUID NOT NULL DEFAULT uuid_generate_v4(),
+    "wordId" TEXT NOT NULL,
+    "linkedWordId" TEXT NOT NULL,
     "linkedWord" TEXT NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
