@@ -5,7 +5,7 @@ export async function GET(_: NextRequest, { params }: { params: { wordId: string
   const data = await prisma.word.findUnique({
     where: {
       // TODO: 型を考える
-      id: Number(params.wordId),
+      id: params.wordId,
     },
   });
   if (!data) {

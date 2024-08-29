@@ -10,6 +10,7 @@
     "lint:fix": "yarn dlx @biomejs/biome lint . --write",
     "format": "yarn dlx @biomejs/biome format . --write",
     "check": "yarn dlx @biomejs/biome check --write .",
+    "type-check": "tsc --noEmit",
     "postinstall": "prisma generate"
   },
   "dependencies": {
