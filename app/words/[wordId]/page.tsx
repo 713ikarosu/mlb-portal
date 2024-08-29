@@ -34,22 +34,6 @@ export default async function WordPage({ params }: Props) {
       <Heading divider>{data.word}</Heading>
       <div>
         <Text>{data.description}</Text>
-        {/* MEMO: リンク付きページの理想形イメージ
-        <p className="leading-6">
-          例年7月31日（アメリカ東部標準時16:00）に定められる、メジャー球団が、メジャー契約（40人枠内）選手をシーズン中に
-          <SimpleLink href="/">トレード</SimpleLink>できる期限日時のこと。
-        </p>
-        <p className="leading-6">
-          2018年までは、事前に<SimpleLink href="/">ウェイバー</SimpleLink>
-          を通過させれば8月以降のシーズン期間でも40人枠内の選手を<SimpleLink href="/">ウェイバー</SimpleLink>
-          できたが、2019年からは
-          <SimpleLink href="/">ウェイバー</SimpleLink>
-          公示に伴う8月以降の<SimpleLink href="/">ウェイバー</SimpleLink>も禁止となった。なお、DFAに伴い40人枠を外れた
-          <SimpleLink href="/">ウェイバー</SimpleLink>公示中の選手がクレーム（他球団から獲得申し込み、Claim
-          off）を受け、選手が無条件譲渡されるケースは8月以降もありうる。また、今シーズン1度も40人枠に登録されていない
-          <SimpleLink href="/">マイナー契約</SimpleLink>（40人枠外）選手については、8月以降も
-          <SimpleLink href="/">ウェイバー</SimpleLink>可能。
-        </p> */}
       </div>
     </section>
   );
