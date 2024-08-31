@@ -17,12 +17,12 @@ export async function GET(_: NextRequest, { params }: { params: { wordId: string
 
 export async function POST(req: NextRequest, { params }: { params: { wordId: string } }) {
   const body = await req.json();
-  const photo = await prisma.word.update({
-    where: { id: Number(params.wordId) },
+  const word = await prisma.word.update({
+    where: { id: params.wordId },
     data: {
       word: body.word,
       description: body.description,
     },
   });
-  return Response.json({ photo });
+  return Response.json({ word });
 }

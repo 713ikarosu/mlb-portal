@@ -14,13 +14,13 @@ export async function GET() {
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const photo = await prisma.word.create({
+    const word = await prisma.word.create({
       data: {
         word: body.word,
         description: body.description,
       },
     });
-    return Response.json({ photo }, { status: 201 });
+    return Response.json({ word }, { status: 201 });
   } catch (error) {
     return Response.json({ message: `Internal Server Error ${error}` }, { status: 500 });
   }
