@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Heading from "../_components/Heading";
-import { WordsTable } from "./_components/WordsTable";
+// import { WordsTable } from "./_components/WordsTable";
 
 export const metadata: Metadata = {
   robots: {
@@ -15,7 +15,7 @@ export default function ManagePage() {
       <form className="flex space-y-4 flex-col">
         <h2 className="flex flex-col">MLB用語管理画面。現在開発中。</h2>
         {/* TODO: 編集用テーブルを用意 */}
-        <WordsTable />
+        {/* <WordsTable /> */}
       </form>
     </section>
   );
