@@ -2,7 +2,7 @@ import Text from "@/app/_components/common";
 import { getWords } from "@/services/manager/getWords";
 
 export async function WordsTable() {
-  const { words } = await getWords({ revalidate: 60 * 60 * 24 });
+  const { words } = await getWords();
 
   return (
     <div className="overflow-x-auto">

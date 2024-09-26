@@ -1,23 +1,19 @@
-import { path, handleFailed, handleSucceed } from "../";
-
-type Word = {
-  id: string;
-  word: string;
-  description: string;
-};
+import { prisma } from "@/lib/prisma";
+import type { Word } from "@prisma/client";
 
 type Props = {
   id: string;
-  revalidate?: number;
 };
 
-export async function getWord({ id, revalidate }: Props): Promise<{ data: Word }> {
-  return fetch(path(`/api/words/${id}`), {
-    next: {
-      tags: [`words/${id}`],
-      ...(revalidate !== undefined && { revalidate }),
-    },
-  })
-    .then(handleSucceed)
-    .catch(handleFailed);
+export async function getWord({ id }: Props): Promise<{ word: Word | null }> {
+  try {
+    const word = await prisma.word.findUnique({ where: { id } });
+    if (!word) {
+      return { word: null };
+    }
+    return { word };
+  } catch (error) {
+    console.error("Error fetching word:", error);
+    throw new Error("Failed to fetch word");
+  }
 }
