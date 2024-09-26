@@ -8,7 +8,14 @@ type Word = {
 };
 
 export async function getWords(): Promise<{ words: Word[] }> {
-  const words = await prisma.word.findMany({ take: 20 });
-  // TODO: エラーハンドリング
-  return { words };
+  try {
+    const words = await prisma.word.findMany({ take: 20 });
+    if (!words) {
+      return { words: [] };
+    }
+    return { words };
+  } catch (error) {
+    console.error("Error fetching word:", error);
+    throw new Error("Failed to fetch word");
+  }
 }
