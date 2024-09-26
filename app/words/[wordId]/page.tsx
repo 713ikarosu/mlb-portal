@@ -14,26 +14,29 @@ interface Props {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { data } = await getWord({ id: params.wordId });
-  if (!params.wordId) {
+  const { word } = await getWord({ id: params.wordId });
+  if (!params.wordId || !word) {
     notFound();
   }
-  console.log(params.wordId, data);
+  console.log(params.wordId, word);
 
   // TODO: null, undefined handling
   return {
-    title: `${data.word} | ${SITE_NAME}`,
-    description: `${data.description} | ${SITE_NAME} は日本人ファン向けにメジャーリーグ情報を発信します。`,
+    title: `${word.word} | ${SITE_NAME}`,
+    description: `${word.description} | ${SITE_NAME} は日本人ファン向けにメジャーリーグ情報を発信します。`,
   };
 }
 
 export default async function WordPage({ params }: Props) {
-  const { data } = await getWord({ id: params.wordId });
+  const { word } = await getWord({ id: params.wordId });
+  if (!word) {
+    notFound();
+  }
   return (
     <section className="min-h-[80vh] flex space-y-8 py-16 flex-col w-full max-w-screen-md">
-      <Heading divider>{data.word}</Heading>
+      <Heading divider>{word.word}</Heading>
       <div>
-        <Text>{data.description}</Text>
+        <Text>{word.description}</Text>
       </div>
     </section>
   );
