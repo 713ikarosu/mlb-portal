@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Heading from "../_components/Heading";
+import IconButton from "../_components/IconButton";
 import { WordsTable } from "./_components/WordsTable";
 
 export const metadata: Metadata = {
@@ -14,7 +15,10 @@ export default function ManagePage() {
       <Heading>MLBポータル - 管理画面</Heading>
       <form className="flex space-y-4 flex-col">
         <h2 className="flex flex-col">MLB用語管理画面。現在開発中。</h2>
-        {/* TODO: 編集用テーブルを用意 */}
+        <div>
+          <IconButton label="New Icon" />
+        </div>
+
         <WordsTable />
       </form>
     </section>
