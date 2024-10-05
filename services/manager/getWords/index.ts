@@ -1,5 +1,4 @@
 import { prisma } from "@/lib/prisma";
-import { path, handleFailed, handleSucceed } from "../../";
 
 type Word = {
   id: string;

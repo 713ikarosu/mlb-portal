@@ -16,9 +16,8 @@ export default function ManagePage() {
       <form className="flex space-y-4 flex-col">
         <h2 className="flex flex-col">MLB用語管理画面。現在開発中。</h2>
         <div>
-          <IconButton label="New Icon" />
+          <IconButton label="New Item" href="/manage/new" buttonType="success" />
         </div>
-
         <WordsTable />
       </form>
     </section>
