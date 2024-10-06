@@ -1,5 +1,6 @@
 import Heading from "@/app/_components/Heading";
 import IconButton from "@/app/_components/IconButton";
+import { addWords } from "@/services/manager/addWords";
 
 export default function AddNewPage() {
   return (
@@ -8,12 +9,17 @@ export default function AddNewPage() {
       <div>
         <IconButton label="Back" href="/manage" buttonType="ghost" />
       </div>
-      <form className="flex space-y-4 flex-col">
+      <form action={addWords} className="flex space-y-4 flex-col">
         <div className="flex flex-col space-y-2">
           <label htmlFor="word">Word</label>
-          <input type="text" placeholder="Word Definition" className="input input-bordered" />
+          <input name="word" type="text" placeholder="Word Definition" className="input input-bordered" />
           <label htmlFor="word">Description</label>
-          <textarea className="textarea textarea-bordered" placeholder="Word Description" />
+          <textarea name="description" className="textarea textarea-bordered" placeholder="Word Description" />
+          <div className="flex justify-end">
+            <button type="submit" className="btn btn-success btn-md">
+              Submit
+            </button>
+          </div>
         </div>
       </form>
     </section>
