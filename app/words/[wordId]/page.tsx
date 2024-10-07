@@ -1,17 +1,15 @@
 import Heading from "@/app/_components/Heading";
 import Text from "@/app/_components/common";
-// import { SimpleLink } from "@/app/_components/SimpleLink";
 import { SITE_NAME } from "@/app/constants";
 import { getWord } from "@/services/getWord";
 import type { Metadata } from "next";
-// import Link from "next/link";
 import { notFound } from "next/navigation";
 
-interface Props {
+type Props = {
   params: {
     wordId: string;
   };
-}
+};
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { word } = await getWord({ id: params.wordId });

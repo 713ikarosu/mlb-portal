@@ -1,5 +1,6 @@
 import Text from "@/app/_components/common";
 import { getWords } from "@/services/manager/getWords";
+import Link from "next/link";
 
 export async function WordsTable() {
   const { words } = await getWords();
@@ -23,15 +24,27 @@ export async function WordsTable() {
           <tbody>
             {words.map((word) => {
               return (
-                <tr className="hover" key={`${word.id}`}>
+                <tr className="hover" key={word.id}>
                   <th>
                     <label>
                       <input type="checkbox" className="checkbox" />
                     </label>
                   </th>
-                  <th>{word.id}</th>
-                  <td>{word.word}</td>
-                  <td>{word.description}</td>
+                  <th>
+                    <Link href={`/manage/${word.id}`} className="block w-full">
+                      {word.id}
+                    </Link>
+                  </th>
+                  <td>
+                    <Link href={`/manage/${word.id}`} className="block w-full">
+                      {word.word}
+                    </Link>
+                  </td>
+                  <td>
+                    <Link href={`/manage/${word.id}`} className="block w-full">
+                      {word.description}
+                    </Link>
+                  </td>
                 </tr>
               );
             })}
