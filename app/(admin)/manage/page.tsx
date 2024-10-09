@@ -1,6 +1,6 @@
+import Heading from "@/app/_components/Heading";
+import IconButton from "@/app/_components/IconButton";
 import type { Metadata } from "next";
-import Heading from "../_components/Heading";
-import IconButton from "../_components/IconButton";
 import { WordsTable } from "./_components/WordsTable";
 
 export const metadata: Metadata = {

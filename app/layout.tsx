@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 import type React from "react";
-import "../public/css/globals.css";
+import "@/public/css/globals.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { LayoutFooter } from "./_components/LayoutFooter";
 import { LayoutHeader } from "./_components/LayoutHeader";
