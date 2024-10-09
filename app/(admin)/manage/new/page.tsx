@@ -1,6 +1,6 @@
 import Heading from "@/app/_components/Heading";
 import IconButton from "@/app/_components/IconButton";
-import { addWords } from "@/services/manager/addWords";
+import { addWords } from "@/services/manager/word/actions";
 
 export default function AddNewPage() {
   return (
