@@ -1,5 +1,5 @@
+import Heading from "@/app/_components/Heading";
 import type { Metadata } from "next";
-import Heading from "../_components/Heading";
 
 export const metadata: Metadata = {
   robots: {

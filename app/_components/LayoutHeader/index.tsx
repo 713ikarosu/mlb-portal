@@ -1,6 +1,6 @@
 "use client";
+import { Logo } from "@/app/_components/Logo";
 import type { ReactNode } from "react";
-import { Logo } from "../Logo";
 
 interface LayoutHeaderProps {
   children: ReactNode;

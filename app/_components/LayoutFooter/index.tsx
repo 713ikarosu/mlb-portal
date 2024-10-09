@@ -1,7 +1,7 @@
+import { InstagramLogo } from "@/app/_components/InstagramLogo";
+import { Logo } from "@/app/_components/Logo";
+import { TwitterXLogo } from "@/app/_components/TwitterXLogo";
 import Link from "next/link";
-import { InstagramLogo } from "../InstagramLogo";
-import { Logo } from "../Logo";
-import { TwitterXLogo } from "../TwitterXLogo";
 
 export const LayoutFooter = () => {
   return (
