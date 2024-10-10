@@ -103,6 +103,35 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@conform-to/dom@npm:1.2.2":
+  version: 1.2.2
+  resolution: "@conform-to/dom@npm:1.2.2"
+  checksum: 10c0/87912486e53c06a27e961353436726fe5ab8246265bc5c4bee8ab4143b2e66244caeb47fe1d1eb4ca6ade8333ddcbd16378d255272f5ea2a464a708d846a4cbf
+  languageName: node
+  linkType: hard
+
+"@conform-to/react@npm:^1.2.2":
+  version: 1.2.2
+  resolution: "@conform-to/react@npm:1.2.2"
+  dependencies:
+    "@conform-to/dom": "npm:1.2.2"
+  peerDependencies:
+    react: ">=18"
+  checksum: 10c0/da277eb4ef888ee44d342e45c4ac5243a77c5427003b35b444b6c0b534b1950749ef1333bbd756349aa3bbf3eea8d19b5596d500b93198b15fc93b1e797ed0c8
+  languageName: node
+  linkType: hard
+
+"@conform-to/zod@npm:^1.2.2":
+  version: 1.2.2
+  resolution: "@conform-to/zod@npm:1.2.2"
+  dependencies:
+    "@conform-to/dom": "npm:1.2.2"
+  peerDependencies:
+    zod: ^3.21.0
+  checksum: 10c0/113594da03271bcf2814183b5fed9e84563cbd2cd64f99b73a4d2156eee8600e47d951809dac7776a0db28fc086f5e923e53d510ea8302952dba1d80c2e9d852
+  languageName: node
+  linkType: hard
+
 "@cspotcode/source-map-support@npm:^0.8.0":
   version: 0.8.1
   resolution: "@cspotcode/source-map-support@npm:0.8.1"
@@ -1645,6 +1674,8 @@ __metadata:
   resolution: "mlb-portal@workspace:."
   dependencies:
     "@biomejs/biome": "npm:1.8.3"
+    "@conform-to/react": "npm:^1.2.2"
+    "@conform-to/zod": "npm:^1.2.2"
     "@fortawesome/fontawesome-svg-core": "npm:^6.6.0"
     "@fortawesome/free-brands-svg-icons": "npm:^6.6.0"
     "@fortawesome/free-regular-svg-icons": "npm:^6.6.0"

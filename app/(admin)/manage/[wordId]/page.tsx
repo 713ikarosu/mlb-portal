@@ -1,3 +1,4 @@
+import { WordUpdateForm } from "@/app/(admin)/manage/_components/WordUpdateForm";
 import IconButton from "@/app/_components/IconButton";
 import { getWord } from "@/services/getWord";
 import { notFound } from "next/navigation";
@@ -19,30 +20,7 @@ export default async function WordPage({ params }: Props) {
       <div>
         <IconButton label="Back" href="/manage" buttonType="ghost" />
       </div>
-      <form action="#" className="flex space-y-4 flex-col">
-        <label htmlFor="word">Word</label>
-        {/* TODO: read only になってるので編集可能にする */}
-        <input
-          name="word"
-          type="text"
-          placeholder="Word Definition"
-          className="input input-bordered"
-          value={word.word}
-        />
-        <label htmlFor="description">Description</label>
-        {/* TODO: read only になってるので編集可能にする */}
-        <textarea
-          name="description"
-          className="textarea textarea-bordered"
-          placeholder="Word Description"
-          value={word.description}
-        />
-        <div className="flex justify-end">
-          <button type="submit" className="btn btn-success btn-md">
-            Submit
-          </button>
-        </div>
-      </form>
+      <WordUpdateForm word={word} />
     </section>
   );
 }
