@@ -5,16 +5,13 @@ import { updateWord } from "@/services/manager/word/actions";
 import { getInputProps, getTextareaProps, useForm } from "@conform-to/react";
 import { parseWithZod } from "@conform-to/zod";
 import type { Word } from "@prisma/client";
-import { useFormState } from "react-dom";
 
 type Props = {
   word: Word;
 };
 
 export function WordUpdateForm({ word }: Props) {
-  // const [lastResult, formAction] = useFormState(updateWord, undefined);
   const [form, fields] = useForm({
-    // lastResult,
     onValidate({ formData }) {
       // Server 側と同じバリデーションがクライアントで行える
       return parseWithZod(formData, { schema: wordSchema });
@@ -46,7 +43,10 @@ export function WordUpdateForm({ word }: Props) {
 
       <div className="flex flex-col gap-2">
         <label htmlFor={fields.description.id}>Description</label>
-        <input {...getTextareaProps(fields.description)} className="textarea textarea-bordered" />
+        <textarea
+          {...getTextareaProps(fields.description)}
+          className="textarea textarea-bordered textarea-md min-h-48"
+        />
       </div>
 
       <div className="flex justify-end">
