@@ -1,7 +1,8 @@
 "use client";
 
+import Heading from "@/app/_components/Heading";
 import { wordSchema } from "@/lib/form/schema";
-import { updateWord } from "@/services/manager/word/actions";
+import { deleteWord, updateWord } from "@/services/manager/word/actions";
 import { getInputProps, getTextareaProps, useForm } from "@conform-to/react";
 import { parseWithZod } from "@conform-to/zod";
 import type { Word } from "@prisma/client";
@@ -24,10 +25,23 @@ export function WordUpdateForm({ word }: Props) {
   });
   return (
     <>
+      <Heading>用語情報の更新・削除</Heading>
       <div className="flex justify-end">
-        <button type="button" className="btn btn-secondary btn-md">
-          Delete
-        </button>
+        <form action={deleteWord}>
+          <input
+            name="wordId"
+            type="text"
+            placeholder="Word Id"
+            className="input input-bordered"
+            value={word.id}
+            readOnly
+            hidden
+          />
+          {/* TODO: 確認モーダルを挟む */}
+          <button type="submit" className="btn btn-secondary btn-md">
+            Delete
+          </button>
+        </form>
       </div>
       <form id={form.id} onSubmit={form.onSubmit} action={updateWord} className="flex space-y-4 flex-col" noValidate>
         <div className="flex flex-col gap-2">
