@@ -2,6 +2,7 @@
 import { wordSchema } from "@/lib/form/schema";
 import { prisma } from "@/lib/prisma";
 import { parseWithZod } from "@conform-to/zod";
+import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
 export async function addWords(formData: FormData) {
@@ -15,6 +16,7 @@ export async function addWords(formData: FormData) {
     },
   });
 
+  revalidatePath("/manage");
   redirect("/manage");
 }
 
@@ -35,5 +37,18 @@ export async function updateWord(formData: FormData) {
   });
 
   // TODO: revalidate 対象ページ(/words/{wordId})と/manage
+  revalidatePath("/manage");
+  revalidatePath(`/manage/${wordId}`);
+  revalidatePath(`/words/${wordId}`);
+  redirect("/manage");
+}
+
+export async function deleteWord(formData: FormData) {
+  const wordId = formData.get("wordId") as string;
+  await prisma.word.delete({
+    where: { id: wordId },
+  });
+  // TODO: revalidate 対象ページ(/words/{wordId})と/manage
+  revalidatePath("/manage");
   redirect("/manage");
 }

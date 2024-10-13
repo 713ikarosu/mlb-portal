@@ -5,7 +5,7 @@ import { addWords } from "@/services/manager/word/actions";
 export default function AddNewPage() {
   return (
     <section className="flex space-y-8 py-16 flex-col w-full max-w-screen-md">
-      <Heading>MLBポータル - 管理画面 - 新規追加</Heading>
+      <Heading>用語情報の新規追加</Heading>
       <div>
         <IconButton label="Back" href="/manage" buttonType="ghost" />
       </div>
