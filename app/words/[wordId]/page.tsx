@@ -16,7 +16,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!params.wordId || !word) {
     notFound();
   }
-  console.log(params.wordId, word);
 
   // TODO: null, undefined handling
   return {

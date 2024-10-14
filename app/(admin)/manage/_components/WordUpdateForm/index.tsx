@@ -1,11 +1,13 @@
 "use client";
 
 import Heading from "@/app/_components/Heading";
+import IconButton from "@/app/_components/IconButton";
 import { wordSchema } from "@/lib/form/schema";
 import { deleteWord, updateWord } from "@/services/manager/word/actions";
 import { getInputProps, getTextareaProps, useForm } from "@conform-to/react";
 import { parseWithZod } from "@conform-to/zod";
 import type { Word } from "@prisma/client";
+import Link from "next/link";
 
 type Props = {
   word: Word;
@@ -25,8 +27,11 @@ export function WordUpdateForm({ word }: Props) {
   });
   return (
     <>
-      <Heading>用語情報の更新・削除</Heading>
-      <div className="flex justify-end">
+      <div className="flex justify-between">
+        <IconButton label="< Back" href="/manage" buttonType="ghost" />
+        <Link href={`/words/${word.id}`} className="btn btn-sm btn-accent">
+          Current Page
+        </Link>
         <form action={deleteWord}>
           <input
             name="wordId"
@@ -38,7 +43,7 @@ export function WordUpdateForm({ word }: Props) {
             hidden
           />
           {/* TODO: 確認モーダルを挟む */}
-          <button type="submit" className="btn btn-secondary btn-md">
+          <button type="submit" className="btn btn-secondary btn-sm">
             Delete
           </button>
         </form>
@@ -65,7 +70,7 @@ export function WordUpdateForm({ word }: Props) {
           <label htmlFor={fields.description.id}>Description</label>
           <textarea
             {...getTextareaProps(fields.description)}
-            className="textarea textarea-bordered textarea-md min-h-48"
+            className="textarea textarea-bordered textarea-md h-[620px]"
           />
         </div>
 
