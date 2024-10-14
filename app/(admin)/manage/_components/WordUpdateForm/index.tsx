@@ -1,6 +1,5 @@
 "use client";
 
-import Heading from "@/app/_components/Heading";
 import IconButton from "@/app/_components/IconButton";
 import { wordSchema } from "@/lib/form/schema";
 import { deleteWord, updateWord } from "@/services/manager/word/actions";
