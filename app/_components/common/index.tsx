@@ -5,5 +5,5 @@ interface TextProps {
 }
 
 export default function Text({ children }: TextProps) {
-  return <p className="text-md leading-6">{children}</p>;
+  return <p className="text-md leading-7">{children}</p>;
 }

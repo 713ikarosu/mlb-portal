@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function ManagePage() {
   return (
     <section className="flex space-y-8 py-16 flex-col w-full max-w-screen-md">
-      <Heading>MLBポータル - 管理画面</Heading>
+      <Heading>管理画面</Heading>
       <form className="flex space-y-4 flex-col">
         <h2 className="flex flex-col">MLB用語管理画面。現在開発中。</h2>
         <div className="flex justify-end">

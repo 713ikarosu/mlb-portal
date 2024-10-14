@@ -8,7 +8,7 @@ export async function WordsTable() {
   return (
     <div className="overflow-x-auto">
       {words.length > 0 ? (
-        <table className="table bg-neutral">
+        <table className="table bg-neutral table-pin-rows min-w-[768px]">
           <thead>
             <tr>
               <th>
@@ -36,12 +36,12 @@ export async function WordsTable() {
                     </Link>
                   </th>
                   <td>
-                    <Link href={`/manage/${word.id}`} className="block w-full">
+                    <Link href={`/manage/${word.id}`} className="block w-full min-w-24">
                       {word.word}
                     </Link>
                   </td>
                   <td>
-                    <Link href={`/manage/${word.id}`} className="block w-full">
+                    <Link href={`/manage/${word.id}`} className="h-16 w-full line-clamp-3">
                       {word.description}
                     </Link>
                   </td>

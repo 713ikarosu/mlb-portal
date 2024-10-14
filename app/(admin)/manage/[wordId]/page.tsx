@@ -1,4 +1,5 @@
 import { WordUpdateForm } from "@/app/(admin)/manage/_components/WordUpdateForm";
+import Heading from "@/app/_components/Heading";
 import IconButton from "@/app/_components/IconButton";
 import { getWord } from "@/services/getWord";
 import { notFound } from "next/navigation";
@@ -17,9 +18,7 @@ export default async function WordPage({ params }: Props) {
 
   return (
     <section className="min-h-[80vh] flex space-y-8 py-16 flex-col w-full max-w-screen-md">
-      <div>
-        <IconButton label="Back" href="/manage" buttonType="ghost" />
-      </div>
+      <Heading>更新・削除</Heading>
       <WordUpdateForm word={word} />
     </section>
   );
