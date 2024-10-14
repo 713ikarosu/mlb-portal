@@ -1,6 +1,5 @@
 import { WordUpdateForm } from "@/app/(admin)/manage/_components/WordUpdateForm";
 import Heading from "@/app/_components/Heading";
-import IconButton from "@/app/_components/IconButton";
 import { getWord } from "@/services/getWord";
 import { notFound } from "next/navigation";
 

@@ -1,5 +1,5 @@
 import Heading from "@/app/_components/Heading";
-import Text from "@/app/_components/common";
+import Text from "@/app/_components/common/Text";
 import { SITE_NAME } from "@/app/constants";
 import { getWord } from "@/services/getWord";
 import type { Metadata } from "next";

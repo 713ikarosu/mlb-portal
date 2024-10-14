@@ -13,7 +13,7 @@ const NotoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  title: "MLB-PORTAL for Personal",
+  title: "MLB ポータル",
   description: "mlb fan site - for Japanese",
 };
 

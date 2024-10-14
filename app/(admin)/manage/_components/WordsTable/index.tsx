@@ -1,4 +1,4 @@
-import Text from "@/app/_components/common";
+import Text from "@/app/_components/common/Text";
 import { getWords } from "@/services/manager/getWords";
 import Link from "next/link";
 
