@@ -5,14 +5,14 @@ export default function Home() {
     <main>
       <section className="hero min-h-screen" style={{ backgroundImage: "url(/image/top/main_visual.jpg)" }}>
         <div className="hero-overlay bg-opacity-60" />
-        <div className="hero-content text-center text-neutral-content">
+        <div className="hero-content text-center">
           <div className="max-w-md">
-            <h1 className="mb-5 text-5xl font-bold">MLB PORTAL</h1>
+            <h1 className="mb-5 text-5xl font-bold">MLB ポータル</h1>
             <p className="mb-5">
               日本人向けのMLBファンサイトです。MLBの基本情報から、最新情報・日本人選手情報などをお届けします。
             </p>
-            <Link href="/">
-              <button type="button" className="btn btn-neutral">
+            <Link href="/words/">
+              <button type="button" className="btn">
                 はじめる
               </button>
             </Link>

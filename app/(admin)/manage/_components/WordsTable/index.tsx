@@ -24,7 +24,7 @@ export async function WordsTable() {
           <tbody>
             {words.map((word) => {
               return (
-                <tr className="hover" key={word.id}>
+                <tr className="hover text-base-content" key={word.id}>
                   <th>
                     <label>
                       <input type="checkbox" className="checkbox" />
