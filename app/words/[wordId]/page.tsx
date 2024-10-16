@@ -30,7 +30,7 @@ export default async function WordPage({ params }: Props) {
     notFound();
   }
   return (
-    <section className="min-h-[80vh] flex space-y-8 py-16 flex-col w-full max-w-screen-md">
+    <section className="min-h-[50vh] flex space-y-8 py-16 flex-col w-full max-w-screen-md">
       <Heading divider>{word.word}</Heading>
       <div>
         <Text>{word.description}</Text>

@@ -28,7 +28,7 @@ export function WordUpdateForm({ word }: Props) {
     <>
       <div className="flex justify-between">
         <IconButton label="< Back" href="/manage" buttonType="ghost" />
-        <Link href={`/words/${word.id}`} className="btn btn-sm btn-accent">
+        <Link href={`/words/${word.id}`} className="btn btn-sm btn-accent" target="_blank">
           Current Page
         </Link>
         <form action={deleteWord}>
@@ -54,7 +54,7 @@ export function WordUpdateForm({ word }: Props) {
             name="wordId"
             type="text"
             placeholder="Word Id"
-            className="input input-bordered"
+            className="input input-bordered text-base-content"
             value={word.id}
             readOnly
           />
@@ -62,14 +62,14 @@ export function WordUpdateForm({ word }: Props) {
 
         <div className="flex flex-col gap-2">
           <label htmlFor={fields.word.id}>Word</label>
-          <input {...getInputProps(fields.word, { type: "text" })} className="input input-bordered" />
+          <input {...getInputProps(fields.word, { type: "text" })} className="input input-bordered text-base-content" />
         </div>
 
         <div className="flex flex-col gap-2">
           <label htmlFor={fields.description.id}>Description</label>
           <textarea
             {...getTextareaProps(fields.description)}
-            className="textarea textarea-bordered textarea-md h-[620px]"
+            className="textarea textarea-bordered textarea-md h-[620px] text-base-content"
           />
         </div>
 

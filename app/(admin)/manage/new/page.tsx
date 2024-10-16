@@ -15,11 +15,16 @@ export default function AddNewPage() {
         </div>
         <div className="flex flex-col space-y-2">
           <label htmlFor="word">Word</label>
-          <input name="word" type="text" placeholder="Word Definition" className="input input-bordered" />
+          <input
+            name="word"
+            type="text"
+            placeholder="Word Definition"
+            className="input input-bordered text-base-content"
+          />
           <label htmlFor="word">Description</label>
           <textarea
             name="description"
-            className="textarea textarea-bordered h-[620px]"
+            className="textarea textarea-bordered h-[620px] text-base-content"
             placeholder="Word Description"
           />
         </div>

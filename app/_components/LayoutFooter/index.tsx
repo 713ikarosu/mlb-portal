@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export const LayoutFooter = () => {
   return (
-    <footer className="footer items-center p-4 bg-neutral text-neutral-content">
+    <footer className="footer items-center p-4 bg-neutral">
       <aside className="items-center grid-flow-col">
         <Logo />
         <p>Copyright © 2024 - mlb-portal - All right reserved</p>

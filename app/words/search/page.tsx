@@ -1,4 +1,5 @@
 import Heading from "@/app/_components/Heading";
+import { WordsSearchCard } from "@/app/_components/WordsSearchCard";
 import { searchWords } from "@/services/word/actions";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -22,12 +23,12 @@ export default async function SearchPage({ searchParams }: Props) {
   }
 
   return (
-    <div className="flex flex-col gap-8">
+    <section className="flex flex-col gap-8 w-full max-w-screen-md">
       <Heading>検索結果</Heading>
       <div>検索キーワード：{query}</div>
-      <div>{words[0].id}</div>
-      <div>{words[0].word}</div>
-      <div>{words[0].description}</div>
-    </div>
+      {words.map((word) => {
+        return <WordsSearchCard word={word} key={word.id} />;
+      })}
+    </section>
   );
 }

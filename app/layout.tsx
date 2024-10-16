@@ -12,10 +12,10 @@ const NotoSansJP = Noto_Sans_JP({
   preload: true,
 });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "MLB ポータル",
   description: "mlb fan site - for Japanese",
-};
+} satisfies Metadata;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

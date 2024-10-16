@@ -15,10 +15,17 @@ export default function WordsPage() {
       <form className="flex space-y-4 flex-col" action="/words/search" method="GET">
         <h3 className="flex flex-col">MLB用語を日本人ファン向けに解説します。現在調整中につき動きません。</h3>
         {/* TODO: フォームのコンポーネント作成 */}
-        <input type="text" name="query" className="bg-white rounded-md h-8" />
-        <button type="submit" className="btn btn-primary">
-          検索する
-        </button>
+        <div className="flex flex-col space-y-12 md:space-y-16">
+          <input
+            type="text"
+            name="query"
+            className="w-full input input-borderd bg-white"
+            placeholder="例：ポストシーズン"
+          />
+          <button type="submit" className="btn btn-secondary w-full">
+            検索する
+          </button>
+        </div>
       </form>
     </section>
   );
