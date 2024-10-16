@@ -26,21 +26,21 @@ export default function Home() {
           {/* TODO: コンポーネント化 */}
           <div className="card min-w-80 bg-slate-100 shadow-xl">
             <div className="card-body text-slate-600">
-              <h2 className="card-title">MLB用語解説</h2>
+              <h2 className="card-title">MLB用語解説(開発中)</h2>
               <p>数多くあるメジャーリーグ用語を日本人向けにお届け。</p>
             </div>
           </div>
 
           <div className="card min-w-80 bg-slate-100 shadow-xl">
             <div className="card-body text-slate-600">
-              <h2 className="card-title">日本人MLB選手情報</h2>
+              <h2 className="card-title">日本人MLB選手情報(公開予定)</h2>
               <p>メジャーリーグで活躍する日本人選手の情報を日本人向けに紹介。</p>
             </div>
           </div>
 
           <div className="card min-w-80 bg-slate-100 shadow-xl">
             <div className="card-body text-slate-600">
-              <h2 className="card-title">お気に入り球団情報</h2>
+              <h2 className="card-title">お気に入り球団情報(公開予定)</h2>
               <p>30球団あるメジャーリーグ球団からお気に入りの球団の情報をお届け。</p>
             </div>
           </div>
