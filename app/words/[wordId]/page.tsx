@@ -30,11 +30,17 @@ export default async function WordPage({ params }: Props) {
     notFound();
   }
   return (
-    <section className="min-h-[50vh] flex space-y-8 py-16 flex-col w-full max-w-screen-md">
-      <Heading divider>{word.word}</Heading>
-      <div>
-        <Text>{word.description}</Text>
-      </div>
-    </section>
+    <div className="flex flex-col space-y-12">
+      <section className="min-h-[50vh] flex space-y-8 py-16 flex-col w-full max-w-screen-md">
+        <Heading divider>{word.word}</Heading>
+        <div>
+          <Text>{word.description}</Text>
+        </div>
+      </section>
+      <section>
+        <h2 className="text-2xl font-bold">関連ワード</h2>
+        <div className="divider divider-neutral" />
+      </section>
+    </div>
   );
 }
