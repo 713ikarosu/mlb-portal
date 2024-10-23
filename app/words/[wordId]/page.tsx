@@ -30,7 +30,7 @@ export default async function WordPage({ params }: Props) {
     notFound();
   }
   return (
-    <main className="flex flex-col space-y-12">
+    <div className="flex flex-col space-y-12">
       <section className="min-h-[50vh] flex space-y-8 flex-col w-full max-w-screen-md">
         <Heading divider>{word.word}</Heading>
         <div>
@@ -41,6 +41,6 @@ export default async function WordPage({ params }: Props) {
         <h2 className="text-2xl font-bold">関連ワード</h2>
         <div className="divider divider-neutral" />
       </section>
-    </main>
+    </div>
   );
 }
