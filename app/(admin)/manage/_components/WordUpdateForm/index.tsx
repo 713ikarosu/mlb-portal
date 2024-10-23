@@ -1,8 +1,8 @@
 "use client";
 
+import { deleteWord, updateWord } from "@/app/(admin)/manage/action";
 import IconButton from "@/app/_components/IconButton";
 import { wordSchema } from "@/lib/form/schema";
-import { deleteWord, updateWord } from "@/services/manager/word/actions";
 import { getInputProps, getTextareaProps, useForm } from "@conform-to/react";
 import { parseWithZod } from "@conform-to/zod";
 import type { Word } from "@prisma/client";

@@ -17,3 +17,16 @@ export async function getWord({ id }: Props): Promise<{ word: Word | null }> {
     throw new Error("Failed to fetch word");
   }
 }
+
+export async function searchWords(query: string) {
+  const words = await prisma.word.findMany({
+    where: {
+      word: {
+        startsWith: query,
+      },
+    },
+    take: 10,
+  });
+
+  return { words };
+}

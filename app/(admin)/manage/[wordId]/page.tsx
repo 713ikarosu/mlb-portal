@@ -1,6 +1,6 @@
 import { WordUpdateForm } from "@/app/(admin)/manage/_components/WordUpdateForm";
+import { getWord } from "@/app/(admin)/manage/action";
 import Heading from "@/app/_components/Heading";
-import { getWord } from "@/services/getWord";
 import { notFound } from "next/navigation";
 
 type Props = {

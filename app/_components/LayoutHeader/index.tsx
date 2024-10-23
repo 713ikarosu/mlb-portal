@@ -1,4 +1,5 @@
 "use client";
+import { LayoutFooter } from "@/app/_components/LayoutFooter";
 import { Logo } from "@/app/_components/Logo";
 import type { ReactNode } from "react";
 
@@ -27,11 +28,11 @@ const MENU_ITEMS = [
 
 export const LayoutHeader = ({ children }: LayoutHeaderProps) => {
   return (
-    <div className="w-full">
+    <div className="w-full min-h-screen">
       <div className="drawer drawer-end">
         <input id="header-drawer" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content flex flex-col">
-          <nav className="navbar bg-base-300 w-full">
+        <div className="drawer-content flex flex-col min-h-screen">
+          <nav className="navbar bg-neutral w-full">
             <Logo />
             <div className="hidden flex-none md:block">
               <ul className="menu menu-horizontal">
@@ -61,6 +62,7 @@ export const LayoutHeader = ({ children }: LayoutHeaderProps) => {
             </label>
           </nav>
           {children}
+          <LayoutFooter />
         </div>
 
         <div className="drawer-side">

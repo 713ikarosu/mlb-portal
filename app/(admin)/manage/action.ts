@@ -1,8 +1,39 @@
 "use server";
 
 import { prisma } from "@/lib/prisma";
+import type { Word } from "@prisma/client";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+
+type GetWordProps = {
+  id: string;
+};
+
+export async function getWord({ id }: GetWordProps): Promise<{ word: Word | null }> {
+  try {
+    const word = await prisma.word.findUnique({ where: { id } });
+    if (!word) {
+      return { word: null };
+    }
+    return { word };
+  } catch (error) {
+    console.error("Error fetching word:", error);
+    throw new Error("Failed to fetch word");
+  }
+}
+
+export async function getWords(): Promise<{ words: Word[] }> {
+  try {
+    const words = await prisma.word.findMany({ take: 20 });
+    if (!words) {
+      return { words: [] };
+    }
+    return { words };
+  } catch (error) {
+    console.error("Error fetching word:", error);
+    throw new Error("Failed to fetch word");
+  }
+}
 
 export async function addWords(formData: FormData) {
   // TODO: バリデーション
