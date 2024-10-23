@@ -47,7 +47,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-4 py-16 md:p-24">
+      <section className="px-4 py-16 md:p-24 bg-base-100">
         <h2 className="text-3xl font-bold py-8">新規コンテンツ鋭意制作中</h2>
         <p>今後は、MLBの試合速報や日本人選手の試合結果などもお届け予定です。お楽しみに！</p>
       </section>

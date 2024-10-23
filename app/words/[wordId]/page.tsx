@@ -1,7 +1,7 @@
+import { getWord } from "@/app/(admin)/manage/action";
 import Heading from "@/app/_components/Heading";
 import Text from "@/app/_components/common/Text";
 import { SITE_NAME } from "@/app/constants";
-import { getWord } from "@/services/getWord";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
@@ -30,8 +30,8 @@ export default async function WordPage({ params }: Props) {
     notFound();
   }
   return (
-    <div className="flex flex-col space-y-12">
-      <section className="min-h-[50vh] flex space-y-8 py-16 flex-col w-full max-w-screen-md">
+    <main className="flex flex-col space-y-12">
+      <section className="min-h-[50vh] flex space-y-8 flex-col w-full max-w-screen-md">
         <Heading divider>{word.word}</Heading>
         <div>
           <Text>{word.description}</Text>
@@ -41,6 +41,6 @@ export default async function WordPage({ params }: Props) {
         <h2 className="text-2xl font-bold">関連ワード</h2>
         <div className="divider divider-neutral" />
       </section>
-    </div>
+    </main>
   );
 }

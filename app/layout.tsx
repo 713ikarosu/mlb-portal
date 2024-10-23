@@ -24,9 +24,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         {process.env.GA_TRACKING_ID && <GoogleAnalytics gaId={process.env.GA_TRACKING_ID} />}
       </head>
-      <body className={NotoSansJP.className}>
+      <body className={`${NotoSansJP.className} bg-gray-200`}>
         <LayoutHeader>{children}</LayoutHeader>
-        <LayoutFooter />
       </body>
     </html>
   );

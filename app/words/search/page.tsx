@@ -1,6 +1,6 @@
 import Heading from "@/app/_components/Heading";
 import { WordsSearchCard } from "@/app/_components/WordsSearchCard";
-import { searchWords } from "@/services/word/actions";
+import { searchWords } from "@/app/words/action";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
