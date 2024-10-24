@@ -21,7 +21,7 @@ export default function WordsPage() {
             className="w-full input input-borderd bg-white"
             placeholder="例：ポストシーズン"
           />
-          <button type="submit" className="btn btn-secondary w-full">
+          <button type="submit" className="btn btn-base-300 w-full">
             検索する
           </button>
         </div>
