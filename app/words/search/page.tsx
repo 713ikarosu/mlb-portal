@@ -1,4 +1,5 @@
 import Heading from "@/app/_components/Heading";
+import IconButton from "@/app/_components/IconButton";
 import { WordsSearchCard } from "@/app/_components/WordsSearchCard";
 import { searchWords } from "@/app/words/action";
 import type { Metadata } from "next";
@@ -25,7 +26,11 @@ export default async function SearchPage({ searchParams }: Props) {
   return (
     <section className="flex flex-col gap-8 w-full max-w-screen-md">
       <Heading>検索結果</Heading>
+      <div>
+        <IconButton label="< Back" href="/words" buttonType="ghost" />
+      </div>
       <div>検索キーワード：{query}</div>
+
       {words.map((word) => {
         return <WordsSearchCard word={word} key={word.id} />;
       })}

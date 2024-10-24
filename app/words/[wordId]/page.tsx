@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   // TODO: null, undefined handling
   return {
-    title: `${word.word} | ${SITE_NAME}`,
+    title: `${word.word} | ${word.word}の意味 | ${SITE_NAME}`,
     description: `${word.description} | ${SITE_NAME} は日本人ファン向けにメジャーリーグ情報を発信します。`,
   };
 }

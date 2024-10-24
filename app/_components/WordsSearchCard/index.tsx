@@ -7,7 +7,10 @@ type Props = {
 
 export function WordsSearchCard({ word }: Props) {
   return (
-    <Link href={`/words/${word.id}/`} className="card shadow-xl bg-base-100 w-full text-base-content">
+    <Link
+      href={`/words/${word.id}/`}
+      className="card shadow-xl bg-gray-200 w-full text-base-200 border-neutral border-2"
+    >
       <div className="card-body ">
         <h2 className="card-title">{word.word}</h2>
         <p className="line-clamp-3">{word.description}</p>
