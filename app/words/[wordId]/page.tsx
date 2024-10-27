@@ -1,9 +1,9 @@
 import { getWord } from "@/app/(admin)/manage/action";
 import Heading from "@/app/_components/Heading";
-import Text from "@/app/_components/common/Text";
 import { SITE_NAME } from "@/app/constants";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import ReactMarkdown from "react-markdown";
 
 type Props = {
   params: {
@@ -34,7 +34,7 @@ export default async function WordPage({ params }: Props) {
       <section className="min-h-[50vh] flex space-y-8 flex-col w-full max-w-screen-md">
         <Heading divider>{word.word}</Heading>
         <div>
-          <Text>{word.description}</Text>
+          <ReactMarkdown>{word.description}</ReactMarkdown>
         </div>
       </section>
       <section>
