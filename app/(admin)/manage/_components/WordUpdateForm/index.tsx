@@ -27,7 +27,7 @@ export function WordUpdateForm({ word }: Props) {
   return (
     <>
       <div className="flex justify-between">
-        <IconButton label="< Back" href="/manage" buttonType="ghost" />
+        <IconButton label="< Back" href="/manage/words/" buttonType="ghost" />
         <Link href={`/words/${word.id}`} className="btn btn-sm btn-accent" target="_blank">
           Current Page
         </Link>

@@ -8,7 +8,7 @@ export default function AddNewPage() {
       <Heading>新規追加</Heading>
       <form action={addWords} className="flex space-y-4 flex-col">
         <div className="flex justify-between">
-          <IconButton label="< Back" href="/manage" buttonType="ghost" />
+          <IconButton label="< Back" href="/manage/words/" buttonType="ghost" />
           <button type="submit" className="btn btn-success btn-sm">
             Submit
           </button>
