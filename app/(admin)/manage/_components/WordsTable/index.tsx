@@ -31,17 +31,17 @@ export async function WordsTable() {
                     </label>
                   </th>
                   <th>
-                    <Link href={`/manage/${word.id}`} className="block w-full">
+                    <Link href={`/manage/words/${word.id}`} className="block w-full">
                       {word.id}
                     </Link>
                   </th>
                   <td>
-                    <Link href={`/manage/${word.id}`} className="block w-full min-w-24">
+                    <Link href={`/manage/words/${word.id}`} className="block w-full min-w-24">
                       {word.word}
                     </Link>
                   </td>
                   <td>
-                    <Link href={`/manage/${word.id}`} className="h-16 w-full line-clamp-3">
+                    <Link href={`/manage/words/${word.id}`} className="h-16 w-full line-clamp-3">
                       {word.description}
                     </Link>
                   </td>

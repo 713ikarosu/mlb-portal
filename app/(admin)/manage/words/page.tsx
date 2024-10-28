@@ -1,7 +1,7 @@
+import { WordsTable } from "@/app/(admin)/manage/_components/WordsTable";
 import Heading from "@/app/_components/Heading";
 import IconButton from "@/app/_components/IconButton";
 import type { Metadata } from "next";
-import { WordsTable } from "./_components/WordsTable";
 
 export const metadata: Metadata = {
   robots: {
@@ -16,7 +16,7 @@ export default function ManagePage() {
       <form className="flex space-y-4 flex-col">
         <h2 className="flex flex-col">MLB用語管理画面。現在開発中。</h2>
         <div className="flex justify-end">
-          <IconButton label="New Item" href="/manage/new" buttonType="success" />
+          <IconButton label="New Item" href="/manage/words/new" buttonType="success" />
         </div>
         <WordsTable />
       </form>

@@ -46,8 +46,8 @@ export async function addWords(formData: FormData) {
     },
   });
 
-  revalidatePath("/manage");
-  redirect("/manage");
+  revalidatePath("/manage/words/");
+  redirect("/manage/words/");
 }
 
 export async function updateWord(formData: FormData) {
@@ -67,10 +67,10 @@ export async function updateWord(formData: FormData) {
   });
 
   // TODO: revalidate 対象ページ(/words/{wordId})と/manage
-  revalidatePath("/manage");
-  revalidatePath(`/manage/${wordId}`);
+  revalidatePath("/manage/words/");
+  revalidatePath(`/manage/words/${wordId}`);
   revalidatePath(`/words/${wordId}`);
-  redirect("/manage");
+  redirect("/manage/words/");
 }
 
 export async function deleteWord(formData: FormData) {
@@ -79,6 +79,6 @@ export async function deleteWord(formData: FormData) {
     where: { id: wordId },
   });
   // TODO: revalidate 対象ページ(/words/{wordId})と/manage
-  revalidatePath("/manage");
-  redirect("/manage");
+  revalidatePath("/manage/words/");
+  redirect("/manage/words/");
 }
