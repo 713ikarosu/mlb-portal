@@ -5,30 +5,34 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
   previewFeatures = ["postgresqlExtensions"]
 }
 
 datasource db {
-  provider  = "postgresql"
-  url  	    = env("DATABASE_URL")
+  provider   = "postgresql"
+  url        = env("DATABASE_URL")
   extensions = [uuidOssp(map: "uuid-ossp")]
 }
 
-
 model Word {
-  id        String      @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
-  word      String
-  description   String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id          String   @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  word        String
+  description String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  originLinks RelatedLink[] @relation()
+  linkedFrom  RelatedLink[] @relation("LinkedWords")
 }
 
 model RelatedLink {
-  id        String      @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
-  wordId    String
-  linkedWordId String
-  linkedWord String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id           Int    @id @default(autoincrement())
+  originWord   Word   @relation(fields: [originWordId], references: [id])
+  originWordId String @db.Uuid
+  linkedWord   Word   @relation("LinkedWords", fields: [linkedWordId], references: [id])
+  linkedWordId String @db.Uuid
+
+  @@index([originWordId])
+  @@index([linkedWordId])
 }
