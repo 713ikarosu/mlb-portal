@@ -1,7 +1,7 @@
 "use client";
+import type { ReactNode } from "react";
 import { LayoutFooter } from "@/app/_components/LayoutFooter";
 import { Logo } from "@/app/_components/Logo";
-import type { ReactNode } from "react";
 
 interface LayoutHeaderProps {
   children: ReactNode;

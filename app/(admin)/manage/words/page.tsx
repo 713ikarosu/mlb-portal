@@ -1,7 +1,7 @@
-import { WordsTable } from "@/app/(admin)/manage/_components/WordsTable";
+import type { Metadata } from "next";
 import Heading from "@/app/_components/Heading";
 import IconButton from "@/app/_components/IconButton";
-import type { Metadata } from "next";
+import { WordsTable } from "@/app/(admin)/manage/_components/WordsTable";
 
 export const metadata: Metadata = {
   robots: {
