@@ -1,12 +1,12 @@
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import Heading from "@/app/_components/Heading";
 import IconButton from "@/app/_components/IconButton";
 import { WordsSearchCard } from "@/app/_components/WordsSearchCard";
 import { searchWords } from "@/app/words/action";
-import type { Metadata } from "next";
-import { notFound } from "next/navigation";
 
 type Props = {
-  searchParams: { [key: string]: string | string[] | undefined };
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
 export const metadata = {
@@ -14,7 +14,8 @@ export const metadata = {
 } satisfies Metadata;
 
 export default async function SearchPage({ searchParams }: Props) {
-  const query = searchParams.query ?? "";
+  const resolvedSearchParams = await searchParams;
+  const query = resolvedSearchParams.query ?? "";
   if (Array.isArray(query)) {
     return null;
   }

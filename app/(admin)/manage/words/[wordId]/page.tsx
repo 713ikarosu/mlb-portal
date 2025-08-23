@@ -1,16 +1,17 @@
+import { notFound } from "next/navigation";
+import Heading from "@/app/_components/Heading";
 import { WordUpdateForm } from "@/app/(admin)/manage/_components/WordUpdateForm";
 import { getWord } from "@/app/(admin)/manage/action";
-import Heading from "@/app/_components/Heading";
-import { notFound } from "next/navigation";
 
 type Props = {
-  params: {
+  params: Promise<{
     wordId: string;
-  };
+  }>;
 };
 
 export default async function WordPage({ params }: Props) {
-  const { word } = await getWord({ id: params.wordId });
+  const { wordId } = await params;
+  const { word } = await getWord({ id: wordId });
   if (!word) {
     notFound();
   }

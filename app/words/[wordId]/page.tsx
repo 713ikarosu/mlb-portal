@@ -1,19 +1,20 @@
-import { getWord } from "@/app/(admin)/manage/action";
-import Heading from "@/app/_components/Heading";
-import { SITE_NAME } from "@/app/constants";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
+import Heading from "@/app/_components/Heading";
+import { getWord } from "@/app/(admin)/manage/action";
+import { SITE_NAME } from "@/app/constants";
 
 type Props = {
-  params: {
+  params: Promise<{
     wordId: string;
-  };
+  }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { word } = await getWord({ id: params.wordId });
-  if (!params.wordId || !word) {
+  const { wordId } = await params;
+  const { word } = await getWord({ id: wordId });
+  if (!wordId || !word) {
     notFound();
   }
 
@@ -25,7 +26,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function WordPage({ params }: Props) {
-  const { word } = await getWord({ id: params.wordId });
+  const { wordId } = await params;
+  const { word } = await getWord({ id: wordId });
   if (!word) {
     notFound();
   }

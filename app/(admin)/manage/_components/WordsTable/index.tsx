@@ -1,6 +1,6 @@
-import { getWords } from "@/app/(admin)/manage/action";
-import Text from "@/app/_components/common/Text";
 import Link from "next/link";
+import Text from "@/app/_components/common/Text";
+import { getWords } from "@/app/(admin)/manage/action";
 
 export async function WordsTable() {
   const { words } = await getWords();

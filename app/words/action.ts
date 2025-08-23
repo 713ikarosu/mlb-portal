@@ -1,5 +1,5 @@
-import { prisma } from "@/lib/prisma";
 import type { Word } from "@prisma/client";
+import { prisma } from "@/lib/prisma";
 
 type Props = {
   id: string;

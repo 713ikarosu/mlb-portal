@@ -1,12 +1,12 @@
 "use client";
 
-import { deleteWord, updateWord } from "@/app/(admin)/manage/action";
-import IconButton from "@/app/_components/IconButton";
-import { wordSchema } from "@/lib/form/schema";
 import { getInputProps, getTextareaProps, useForm } from "@conform-to/react";
 import { parseWithZod } from "@conform-to/zod";
 import type { Word } from "@prisma/client";
 import Link from "next/link";
+import IconButton from "@/app/_components/IconButton";
+import { deleteWord, updateWord } from "@/app/(admin)/manage/action";
+import { wordSchema } from "@/lib/form/schema";
 
 type Props = {
   word: Word;
