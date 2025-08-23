@@ -16,10 +16,17 @@ export const metadata = {
 export default async function SearchPage({ searchParams }: Props) {
   const resolvedSearchParams = await searchParams;
   const query = resolvedSearchParams.query ?? "";
+
   if (Array.isArray(query)) {
-    return null;
+    notFound();
   }
-  const { words } = await searchWords(query);
+
+  const trimmedQuery = query.trim();
+  if (!trimmedQuery) {
+    notFound();
+  }
+
+  const { words } = await searchWords(trimmedQuery);
   if (!words || words.length === 0) {
     notFound();
   }

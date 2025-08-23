@@ -28,19 +28,11 @@ export function WordUpdateForm({ word }: Props) {
     <>
       <div className="flex justify-between">
         <IconButton label="< Back" href="/manage/words/" buttonType="ghost" />
-        <Link href={`/words/${word.id}`} className="btn btn-sm btn-accent" target="_blank">
+        <Link href={`/words/${word.id}`} className="btn btn-sm btn-accent" target="_blank" rel="noopener noreferrer">
           Current Page
         </Link>
         <form action={deleteWord}>
-          <input
-            name="wordId"
-            type="text"
-            placeholder="Word Id"
-            className="input input-bordered"
-            value={word.id}
-            readOnly
-            hidden
-          />
+          <input name="wordId" type="hidden" value={word.id} />
           {/* TODO: 確認モーダルを挟む */}
           <button type="submit" className="btn btn-secondary btn-sm">
             Delete

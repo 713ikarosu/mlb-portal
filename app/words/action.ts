@@ -14,19 +14,30 @@ export async function getWord({ id }: Props): Promise<{ word: Word | null }> {
     return { word };
   } catch (error) {
     console.error("Error fetching word:", error);
-    throw new Error("Failed to fetch word");
+    throw new Error("Failed to fetch word", { cause: error });
   }
 }
 
 export async function searchWords(query: string) {
-  const words = await prisma.word.findMany({
-    where: {
-      word: {
-        startsWith: query,
-      },
-    },
-    take: 10,
-  });
+  try {
+    const trimmedQuery = query.trim();
+    if (!trimmedQuery) {
+      return { words: [] };
+    }
 
-  return { words };
+    const words = await prisma.word.findMany({
+      where: {
+        word: {
+          startsWith: trimmedQuery,
+          mode: "insensitive",
+        },
+      },
+      take: 10,
+    });
+
+    return { words };
+  } catch (error) {
+    console.error("Error searching words:", error);
+    throw new Error("Failed to search words", { cause: error });
+  }
 }

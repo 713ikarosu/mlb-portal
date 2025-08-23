@@ -18,7 +18,7 @@ export default function WordsPage() {
           <input
             type="text"
             name="query"
-            className="w-full input input-borderd bg-white"
+            className="w-full input input-bordered bg-white"
             placeholder="例：ポストシーズン"
           />
           <button type="submit" className="btn btn-base-300 w-full">
