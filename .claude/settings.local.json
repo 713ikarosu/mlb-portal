@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "WebFetch(domain:github.com)",
+      "mcp__serena__check_onboarding_performed",
+      "mcp__serena__onboarding",
+      "mcp__serena__list_dir",
+      "Bash(git commit:*)",
+      "WebFetch(domain:api.github.com)",
+      "Bash(gh pr view:*)",
+      "Bash(git push:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": []
+  }
+}
