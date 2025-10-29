@@ -1,6 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
-  "assist": { "actions": { "source": { "organizeImports": "on" } } },
+  "$schema": "https://biomejs.dev/schemas/2.2.5/schema.json",
   "files": {
     "includes": ["**", "!.next", "!node_modules", "!.git", "!dist", "!build"]
   },

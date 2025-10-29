@@ -1,5 +1,6 @@
 "use client";
 import type { ReactNode } from "react";
+import { useId } from "react";
 import { LayoutFooter } from "@/app/_components/LayoutFooter";
 import { Logo } from "@/app/_components/Logo";
 
@@ -27,10 +28,11 @@ const MENU_ITEMS = [
 ];
 
 export const LayoutHeader = ({ children }: LayoutHeaderProps) => {
+  const drawerId = useId();
   return (
     <div className="w-full min-h-screen">
       <div className="drawer drawer-end">
-        <input id="header-drawer" type="checkbox" className="drawer-toggle" />
+        <input id={drawerId} type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col min-h-screen">
           <nav className="navbar bg-neutral w-full">
             <Logo />
@@ -46,17 +48,20 @@ export const LayoutHeader = ({ children }: LayoutHeaderProps) => {
               </ul>
             </div>
             <label
-              htmlFor="header-drawer"
+              htmlFor={drawerId}
               aria-label="open sidebar"
               className="btn btn-square btn-ghost flex-none md:hidden"
             >
-              {/* biome-ignore lint/a11y/noSvgWithoutTitle: */}
+              {/* biome-ignore lint/a11y/noSvgWithoutTitle: Decorative hamburger menu icon */}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 className="inline-block h-6 w-6 stroke-current"
+                role="img"
+                aria-label="Menu"
               >
+                <title>Menu</title>
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             </label>
@@ -66,7 +71,7 @@ export const LayoutHeader = ({ children }: LayoutHeaderProps) => {
         </div>
 
         <div className="drawer-side">
-          <label htmlFor="header-drawer" aria-label="close sidebar" className="drawer-overlay" />
+          <label htmlFor={drawerId} aria-label="close sidebar" className="drawer-overlay" />
           <ul className="menu bg-base-200 min-h-full w-80 p-4">
             <li>
               <Logo />
